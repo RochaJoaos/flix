@@ -4,8 +4,10 @@
  * Module dependencies.
  */
 
+global.banco = require('../banco');
+
 var app = require('../app');
-var debug = require('debug')('flix:server');
+var debug = require('debug')('mflix:server');
 var http = require('http');
 
 /**
