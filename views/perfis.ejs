@@ -27,16 +27,16 @@
     <div class="grid grid-cols-<%=quantidade%> gap-8">
         
         <% registrosPerfis.forEach(function(perfil){ %>
-            <a href="/entrarPerfil/<%= perfil.percodigo %>">
+            <a href="/entrarPerfil/<%= perfil.codperfil %>">
                 <div class="flex flex-col items-center">
 
-                    <img alt="<%= perfil.pernome %>" class="rounded-full w-36 h-36 mb-4"
-                        src="images/<%= perfil.perfoto %>"
+                    <img alt="<%= perfil.nome %>" class="rounded-full w-36 h-36 mb-4"
+                        src="images/<%= perfil.foto %>"
                         height="150"
                         width="150" />
 
                     <span class="text-xl">
-                        <%= perfil.pernome %>
+                        <%= perfil.nome %>
                     </span>
     
                 </div>

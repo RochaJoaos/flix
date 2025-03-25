@@ -40,7 +40,7 @@ async function buscarUsuario(usuario)
 async function buscarPerfis(usuario)
 {
     const conexao = await conectarBD();
-    const sql = "select * from perfil where codperfil=?;";
+    const sql = "select * from perfil where cod=?;";
     const [perfisEcontrados] = await conexao.query(sql,[usuario]);
     return perfisEcontrados;
 }

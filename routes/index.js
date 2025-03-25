@@ -23,17 +23,11 @@ router.get('/', function(req, res, next) {
 /* GET escolha de perfil */
 router.get('/perfis', async function(req, res, next) {
   verificarLogin(res);
-  const registrosPerfis = await global.banco.buscarPerfis(global.cod);
-
-  if (registrosPerfis.length == 1)
-  {
-    global.codperfil = registrosPerfis[0].codperfil
-    res.redirect('/browse');
-  } 
+  const registrosPerfis = await global.banco.buscarPerfis(global.usuarioCodigo);
+  console.log(registrosPerfis)
 
   res.render('perfis', { titulo: 'MFlix - Escolha de Perfil', registrosPerfis });
 });
-
 
 
 /* GET registrar perfil escolhido */
@@ -64,7 +58,7 @@ router.get('/browse', function(req, res, next) {
 
 /* POST login */
 router.post('/login', async function(req, res, next){
-  const email = req.body.email ;
+  const email = req.body.email;
   const senha = req.body.senha;
 
   const usuario = await global.banco.buscarUsuario({email,senha});
